@@ -7,6 +7,7 @@ output:
     self_contained: no
     fig_height: 9
     fig_width: 9
+    highlight: pygments
   tufte::tufte_html:
     tufte_variant: "envisioned"
     highlight: pygments
@@ -250,7 +251,7 @@ But, for illustrative purposes, let's calculate correlation coefficient between 
 Start with `dino_data` and calculate a summary statistic that we will call `r` as the `cor`relation between `x` and `y`.
 ```
 
-```{r}
+```{r, eval=TRUE}
 dino_data %>%
   summarize(r = cor(x, y))
 ```
@@ -265,15 +266,20 @@ star_data = datasaurus_dozen %>%
 ```
 
 
-```{r}
+```{r, eval=TRUE}
 star_data %>%
   summarize(r = cor(x, y))
 ```
-***Answer: The correlation value increases compared to the dino.*
+
+```{marginfigure}
+JNM Answer: The correlation value increases compared to the dino.*
+```
+
 *A tibble: 1 × 1
         r
     <dbl>
 1 -0.0630*
+
 
 
 
@@ -286,11 +292,14 @@ circle_data = datasaurus_dozen %>%
   filter(dataset == "circle")
 ```
 
-```{r}
+```{r, eval=TRUE}
 circle_data %>%
   summarize(r = cor(x, y))
 ```
-***JNM Answer: compared to "dino" the correlation seems to decrease. 
+
+```{marginfigure}
+JNM Answer: compared to "dino" the correlation seems to decrease. 
+```
 
 *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push.*
 
