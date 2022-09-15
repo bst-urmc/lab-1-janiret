@@ -288,7 +288,7 @@ circle_data = datasaurus_dozen %>%
 circle_data %>%
   summarize(r = cor(x, y))
 ```
-
+Answer: compared to "dino" the correlation seems to decrease. 
 
 *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push.*
 
