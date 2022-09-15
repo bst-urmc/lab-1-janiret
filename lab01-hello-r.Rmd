@@ -5,6 +5,8 @@ author: "Janiret Narvaez Miranda"
 output: 
   html_document: 
     self_contained: no
+    fig_height: 13
+    fig_width: 11
   tufte::tufte_html:
     tufte_variant: "envisioned"
     highlight: pygments
@@ -267,7 +269,7 @@ star_data = datasaurus_dozen %>%
 star_data %>%
   summarize(r = cor(x, y))
 ```
-*Answer: The correlation value increases compared to the dino.*
+***Answer: The correlation value increases compared to the dino.*
 *A tibble: 1 × 1
         r
     <dbl>
@@ -288,7 +290,7 @@ circle_data = datasaurus_dozen %>%
 circle_data %>%
   summarize(r = cor(x, y))
 ```
-Answer: compared to "dino" the correlation seems to decrease. 
+***JNM Answer: compared to "dino" the correlation seems to decrease. 
 
 *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push.*
 
