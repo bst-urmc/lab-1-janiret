@@ -5,8 +5,8 @@ author: "Janiret Narvaez Miranda"
 output: 
   html_document: 
     self_contained: no
-    fig_height: 13
-    fig_width: 11
+    fig_height: 9
+    fig_width: 9
   tufte::tufte_html:
     tufte_variant: "envisioned"
     highlight: pygments
@@ -300,7 +300,7 @@ Facet by the dataset variable, placing the plots in a 3 column grid, and don't a
 
 5. Finally, let's plot all datasets at once. In order to do this we will make use of facetting.
 
-```{r all-viz, eval=FALSE, fig.fullwidth=TRUE}
+```{r all-viz, eval=TRUE, fig.fullwidth=TRUE} 
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +

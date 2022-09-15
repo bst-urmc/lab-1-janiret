@@ -454,7 +454,7 @@ we want to use to represent each observation in the data. In this case
 we want these to be points,m hence <code>geom_point</code>.</p>
 <pre class="r"><code>ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()</code></pre>
-<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-12-1.png" width="1056" /></p>
+<p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-12-1.png" width="864" /></p>
 <p>If this seems like a lot, it is. And you will learn about the
 philosophy of building data visualizations in layer in detail next week.
 For now, follow along with the code that is provided.</p>
@@ -529,6 +529,7 @@ will make use of facetting.</li>
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
   theme(legend.position = &quot;none&quot;)</code></pre>
+<p><img src="lab01-hello-r_files/figure-html/all-viz-1.png" width="864" /></p>
 <p>And we can use the <code>group_by</code> function to generate all the
 summary correlation coefficients.</p>
 <pre class="r"><code>datasaurus_dozen %&gt;%
