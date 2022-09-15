@@ -542,8 +542,9 @@ will represent the variable called <code>y</code>. Then, we add another
 layer to this plot where we define which <code>geom</code>etric shapes
 we want to use to represent each observation in the data. In this case
 we want these to be points,m hence <code>geom_point</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dino_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dino_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color=</span> <span class="st">&quot;red&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="lab01-hello-r_files/figure-html/unnamed-chunk-12-1.png" width="864" /></p>
 <p>If this seems like a lot, it is. And you will learn about the
 philosophy of building data visualizations in layer in detail next week.
@@ -625,6 +626,27 @@ summary correlation coefficients.</p>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">r =</span> <span class="fu">cor</span>(x, y)) <span class="sc">%&gt;%</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="dv">13</span>)</span></code></pre></div>
+<pre><code>## # A tibble:
+## #   13 × 2
+##    dataset   
+##    &lt;chr&gt;     
+##  1 away      
+##  2 bullseye  
+##  3 circle    
+##  4 dino      
+##  5 dots      
+##  6 h_lines   
+##  7 high_lines
+##  8 slant_down
+##  9 slant_up  
+## 10 star      
+## 11 v_lines   
+## 12 wide_lines
+## 13 x_shape   
+## # … with 1
+## #   more
+## #   variable:
+## #   r &lt;dbl&gt;</code></pre>
 <p>You’re done with the data analysis exercises, but we’d like you to do
 two more things:</p>
 <ul>

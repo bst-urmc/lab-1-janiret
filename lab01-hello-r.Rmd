@@ -237,8 +237,9 @@ Second, the assignment operator: `=`, assigns the name `dino_data` to the filter
 Next, we need to visualize these data. We will use the `ggplot` function for this. Its first argument is the data you're visualizing. Next we define the `aes`thetic mappings. In other words, the columns of the data that get mapped to certain aesthetic features of the plot, e.g. the `x` axis will represent the variable called `x` and the `y` axis will represent the variable called `y`. Then, we add another layer to this plot where we define which `geom`etric shapes we want to use to represent each observation in the data. In this case we want these to be points,m hence `geom_point`.
 
 ```{r fig.fullwidth=TRUE}
-ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
-  geom_point()
+ggplot(data = dino_data, mapping = aes(x = x, y = y, color= "red")) +
+  geom_point() +
+  theme(legend.position = "none")
 ```
 
 If this seems like a lot, it is. And you will learn about the philosophy of building data visualizations in layer in detail next week. For now, follow along with the code that is provided.
@@ -318,7 +319,7 @@ ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
 
 And we can use the `group_by` function to generate all the summary correlation coefficients.
 
-```{r all-r, eval=FALSE}
+```{r all-r, eval=TRUE}
 datasaurus_dozen %>%
   group_by(dataset) %>%
   summarize(r = cor(x, y)) %>%
